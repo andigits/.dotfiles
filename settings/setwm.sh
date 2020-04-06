@@ -11,12 +11,12 @@ GF="gnome-flashback"
 
 update_i3 () {
   echo "Update settings for $I3"
-  gsettings set org.gnome.gnome-flashback notifications false
+  rm ~/.config/autostart/plank.desktop
 }
 
 update_gf () {
   echo "Update settings for $GF"
-  gsettings set org.gnome.gnome-flashback notifications true
+  cp ~/settings/plank.desktop ~/.config/autostart/
 }
 
 print_usage () {
@@ -69,7 +69,12 @@ parse_args() {
 parse_args "${@}"
 
 if [ "${#}" -lt "1" ]; then
-	echo "<window-manager> is required. See -h for help."
-	exit 1
+  echo "<window-manager> is required. See -h for help."
+  exit 1
+else
+  echo "Parameter not supported. See -h for help."
+  exit 1
 fi
+
+
 
