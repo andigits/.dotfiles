@@ -11,6 +11,8 @@
 
 set $mod Mod1
 
+set $font "Source Code Pro Medium 13"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -19,7 +21,7 @@ set $mod Mod1
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-font pango:Source Code Pro Medium 13
+font pango: $font
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -49,11 +51,11 @@ bindsym $mod+Shift+q kill
 set $rofiTheme /usr/share/rofi/themes/glue_pro_blue.rasi
 
 ## Launch // Application // <Super> Space ##
-bindsym $mod+d exec rofi -show drun -show-icons -icon-theme Papirus -theme $rofiTheme
+bindsym $mod+d exec rofi -show drun -show-icons -icon-theme Papirus -theme $rofiTheme -font $font
 ## Launch // Command // <Super><Shift> Space ##
-bindsym $mod+Shift+d exec rofi -show run -theme $rofiTheme
+bindsym $mod+Shift+d exec rofi -show run -theme $rofiTheme -font $font
 ## Navigate // Window by Name // <Super><Ctrl> Space ##
-bindsym $mod+Ctrl+d exec rofi -show window -theme $rofiTheme
+bindsym $mod+Ctrl+d exec rofi -show window -theme $rofiTheme -font $font
 
 
 # change focus
